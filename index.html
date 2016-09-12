@@ -17,7 +17,8 @@
 	<title>Cine de Barrio</title>
 </head>
 <body ng-app="usuariosApp">
-	<div class="container-fluid">
+	
+	<header>
 		<br>
 		<nav class="navbar navbar-inverse navbar-static-top">
 			  <br>
@@ -71,10 +72,21 @@
 					</nav>
 				</div>
 
-
-			          
-			<br>
-			<section ng-view></section>
+	</header>
+	<div class="container-fluid">         
+	<br>
+	<section ng-view></section>
 	</div>
 </body>
+<footer>
+	<!--Paginacion-->
+<ul class="pagination" >
+  <li class="active">
+    <a href="#"><</a>
+  </li>
+  <li class="active">
+    <a href="#/page/{{ usuario.page }}">></a>
+  </li>
+</ul>
+</footer>
 </html>
