@@ -1,0 +1,30 @@
+<div class="col-md-offset-3">
+	<label class="text-center">Criterio ordenación por título</label>
+	<label>	
+		<input type="radio" name="ordenacion" ng-value="false" ng-model="criterio.title" ng-checked="true">
+		Ascendente
+	</label>
+	<label>
+		<input type="radio" name="ordenacion" ng-value="true" ng-model="criterio.title">
+		Descendente
+	</label>
+</div>
+<br>
+<br>
+<table class="col-md-offset-3 text-center table-striped table-bordered">
+	<thead>
+		<td>Género</td>
+		<td>Titulo</td>
+		<td>Lenguaje</td>
+		<td>Puntuación</td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="usuario in usuarios | orderBy: 'title':criterio.title"> <!--usuarios viene del scope-->
+			<td><a href="#/genre_ids/{{ usuario.genre_ids }}">{{ usuario.genre_ids }}</a></td> <!--# nav dentro de la pagina-->
+			<td><a href="#/title/{{ usuario.title }}">{{ usuario.title }}</td>	
+			<td>{{ usuario.original_language }}</td>
+			<td>{{ usuario.vote_average }}</td>				
+		</tr>
+	</tbody>
+</table>
+
