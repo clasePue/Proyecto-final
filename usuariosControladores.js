@@ -13,12 +13,10 @@ var Ctrl = (function(){
 			});
 
 	};
-	var _paginador = function($scope,$http,$log,$window,$routeParams){	
-		$http.get('http://api.themoviedb.org/3/discover/movie?api_key=4584ae721cb020ce65a4bd25368ec31e&page=' + $routeParams.page)
+	var _pageCtrl = function($scope,$rootScope,$http,$log,$window){	
+		$http.get('http://api.themoviedb.org/3/discover/movie?api_key=4584ae721cb020ce65a4bd25368ec31e&page=2')
 			.success(function(usuarios){
-				$scope.usuarios = usuarios.page;
-				//$log.log("USUARIOS:")
-				$log.log(JSON.stringify(usuarios))
+				$rootScope.usuarios = usuarios.results;
 
 			})
 			.error(function(err){
@@ -32,6 +30,6 @@ var Ctrl = (function(){
 
 	return {
 		todosLosUsuariosCtrl: _todosLosUsuariosCtrl,
-		paginador: _paginador
+		pageCtrl: _pageCtrl
 	}
 })()
