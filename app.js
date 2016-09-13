@@ -15,7 +15,10 @@ usuariosModule.config(['$routeProvider',function($routeProvider){
 		templateUrl:"vistas/title.html",
 		controller: Ctrl.titleCtrl //para peticion ajax
 	}).
-	otherwise({
+	when("/page/:page",{
+		templateUrl:"vistas/todosLosUsuarios.html",
+		controller: Ctrl.pageCtrl //para peticion ajax.
+	.otherwise({
 		redirectTo: "/"	
 	})
 }])
