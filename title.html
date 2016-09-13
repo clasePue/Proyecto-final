@@ -1,0 +1,21 @@
+<br>
+<div class="row">
+	<form class="form-vertical">
+		<div class="form-group col-md-3">
+			<img src="{{ 'http://image.tmdb.org/t/p/w185/' + usuario.poster_path }}">
+			<!--<input type="text" disabled value="{{ usuario.poster_path }}" class="form-control">-->
+		</div>
+		<div class="form-group col-md-3">
+			<label>Título</label>
+			<input type="text" disabled value="{{ usuario.title }}" class="form-control">
+		</div>
+		<div class="form-group col-md-3">
+			<label>Descripción</label>
+			<textarea disabled class="form-control" rows="12">{{ usuario.overview }}</textarea>
+		</div>
+		<div class="form-group col-md-3">
+			<label>Valoración</label>
+			<input type="text" disabled value="{{ usuario.vote_average }}" class="form-control">
+		</div>
+	</form>
+</div>
