@@ -20,5 +20,5 @@ usuariosModule.config(['$routeProvider',function($routeProvider){
 		controller: Ctrl.pageCtrl //para peticion ajax.
 	.otherwise({
 		redirectTo: "/"	
-	})
+	})})
 }])
