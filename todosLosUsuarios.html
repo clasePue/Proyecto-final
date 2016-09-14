@@ -15,14 +15,12 @@
 	<thead>
 		<td>Género</td>
 		<td>Titulo</td>
-		<td>Lenguaje</td>
 		<td>Puntuación</td>
 	</thead>
 	<tbody>
 		<tr ng-repeat="usuario in usuarios | orderBy: 'title':criterio.title"> <!--usuarios viene del scope-->
 			<td><a href="#/genre_ids/{{ usuario.genre_ids }}">{{ usuario.genre_ids }}</a></td> <!--# nav dentro de la pagina-->
 			<td><a href="#/title/{{ usuario.id }}">{{ usuario.title }}</td>	
-			<td>{{ usuario.original_language }}</td>
 			<td>{{ usuario.vote_average }}</td>				
 		</tr>
 	</tbody>
